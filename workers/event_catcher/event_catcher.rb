@@ -20,6 +20,10 @@ class EventCatcher
 
     logger.info("Collecting events...")
 
+    logger.info("ems: #{ems}")
+    logger.info("messaging: #{messaging}")
+    logger.info("messaging: #{settings}")
+
     wait_for_updates(vim) do |property_change|
       logger.info(property_change.name)
       next unless property_change.name.match?(/latestPage.*/)
